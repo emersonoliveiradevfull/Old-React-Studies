@@ -1,0 +1,14 @@
+.navbar {
+    background-image: linear-gradient(to right, #02d4a7, #01b4a4);
+    border-color: linear-gradient(to right, #02d4a7, #01b4a4);
+}
+
+.navbar-header {
+    left: 50%;
+    position: relative;
+    transform: translateX(-50%);
+}
+
+.navbar-brand > img {
+    max-height: 1.8em;
+}

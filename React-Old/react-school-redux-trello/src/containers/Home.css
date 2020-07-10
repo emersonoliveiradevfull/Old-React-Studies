@@ -1,0 +1,23 @@
+.form-control, .form-control[aria-readonly] {
+    border: none;
+    background-color: #F5F5F5;
+    box-shadow: none;
+}
+
+.form-control:focus {
+    box-shadow: none
+}
+
+ul, li {
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+.btn-delete {
+    padding: 6px 10px;
+}

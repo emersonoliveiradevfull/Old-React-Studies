@@ -1,0 +1,50 @@
+npm ou yarn add
+
+// Principal
+npx create-react-app my-app
+cd my-app
+npm start
+
+npm i react-router-dom
+npm i redux
+npm i react-redux
+npm i react-thunk
+
+// Instalar global
+npm install create-react-app -g
+create-react-app nomeDoProjeto
+
+
+// Instalar global
+npm install create-react-app -g
+create-react-app nomeDoProjeto
+
+// JSX ex {logo}
+<img src={logo} className="App-logo" alt="logo"/>
+
+// Início do start do projeto é no index.js chamando o elemento de id root
+// Esse elemento está em public index.html
+
+// Props
+Atributos transitórios para por exemplo estilizar um componente de maneiras diferentes
+Os dados são enviados/determinados no atributos quando se faz a inclusão do componente
+Condição, customização
+tende a não mudar depois de definido
+
+// State
+Fixo e único ao componente - Não tem nada a ver com atributos
+Exclusivo daquele componente
+Dados de uma api
+Muda a todo momento
+Os dado não vão pra outros componentes / não transitório
+Dados pra mostrar
+Para atualizar se usa o this.setState
+
+//bind
+O bind irá ajudar a igualar os contextos,
+uma vez que o contexto de uma função será diferente do contexto do render
+
+pode fazer o bind de 3 maneiras
+    <button type="button" onClick={ this.clickMethod.bind(this) } >Click me</button>
+    this.clickMethod = this.clickMethod.bind(this)
+    clickMethod = () => { }

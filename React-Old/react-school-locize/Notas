@@ -1,0 +1,5 @@
+yarn add install i18next
+yarn add install react-i18next
+yarn add install i18next-locize-backend
+yarn add install locize-editor
+yarn add install i18next-browser-languagedetector

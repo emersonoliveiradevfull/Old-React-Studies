@@ -1,0 +1,15 @@
+npm ou yarn add
+
+// Principal
+npx create-react-app my-app
+cd my-app
+npm start
+
+npm i react-router-dom
+npm i redux
+npm i react-redux
+npm i react-thunk
+
+// Instalar global
+npm install create-react-app -g
+create-react-app nomeDoProjeto

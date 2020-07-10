@@ -1,0 +1,80 @@
+npx create-react-app my-app
+cd my-app
+yarn add redux react-redux --save
+
+
+1 - Criar store.js
+    import { createStore } from 'redux'
+    export default  createStore({})
+
+
+2 - Importa no component raiz a store; e o Provider nesse caso pois estou usando o componente inicial
+    import store from './store'
+    import { Provider } from 'react-redux'
+    ReactDOM.render(
+      <Provider store={store}>
+        <App />
+      </Provider>
+        , document.getElementById('root'));
+    #### obs: O provider pega o componente (no caso o inicial.. raiz... e conecta ao único store)
+
+
+3 - Criar um reducer - Função pura que recebe o estado e atualiza o state
+    export const clickReducer = (state = {msg: ''}, action) => {
+      switch (action.type) {
+        case 'CLICK_HELLO':
+          // Atualização... Evolução do state
+          // Pega o state e atualiza o valor msg dentro dele
+          return { ...state, msg: 'School of net' }
+        default:
+          return state
+      }
+    }
+
+4 - Criar também o index.js no reducers para combinar todos os reducers e retorná-los "juntos"
+        // Importar ainda aqui todos os reducers criados
+    import { combineReducers } from 'redux'
+    import { clickReducer } from './clickReducer'
+
+    export default combineReducers({
+      clickReducer
+    })
+
+5 - Atualizar o parâmentro createStore de reducers
+    import { createStore } from 'redux'
+    import Reducers from './reducers/index'
+
+    export default  createStore(Reducers)
+
+6 - Criar a action
+    export const clickHelloAction = (value) => {
+      return {
+        type: 'CLICK_HELLO',
+        msg: ''
+      }
+    }
+
+7 - Ligar todo o "redux do projeto" no componente importando o connect
+    import { connect } from 'react-redux'
+    // Mudo também a maneira de exportar o componente
+    export default connect()(App)
+
+8 - Criar o mapStateToProps e o mapDispatchToProps
+    const mapStateToProps = (store) => {
+      console.log('STORE APP', store)
+      return {
+        msg: store.clickReducer.msg
+      }
+    }
+
+    const mapDispatchToProps = (dispatch) => bindActionCreators({ clickHelloAction }, dispatch)
+
+    export default connect(mapStateToProps, mapDispatchToProps)(App)
+
+9 - Criar evento que chama a action e resgatar valor
+    <button type="button" onClick={ () => this.props.clickHelloAction() }> Click to Dispatch Action </button>
+    <h1>{ this.props.msg }</h1>
+
+
+OBS: Quando ocorre o click
+Chama a Action -> Passa os dados para a reducer -> Na reducer o type é isolado e o bloco executado

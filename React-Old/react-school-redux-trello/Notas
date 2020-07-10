@@ -1,0 +1,12 @@
+yarn add redux
+yarn add react-redux
+yarn add prop-types
+yarn add react-dnd
+yarn add react-dnd-html5-backend
+
+ yarn add react-router-redux@next
+ yarn add react-router-redux@next history
+ yarn add connected-react-router
+yarn add uuid
+
+ Clica -> Chama um evento -> o evento chama uma função do mapToDispatchProps que nada mais é do que uma função da action
